@@ -1,14 +1,14 @@
 import adapters.cli.CLIAdapter;
 import adapters.repository.TarefaRepositoryEmMemoria;
-import core.GerenciadorTarefas;
-import ports.TarefaRepository;
-
 public class Main {
     public static void main(String[] args) {
-        TarefaRepository repository = new TarefaRepositoryEmMemoria();
-        GerenciadorTarefas gerenciador = new GerenciadorTarefas(repository);
-        CLIAdapter cli = new CLIAdapter(gerenciador);
+        // Configuração do repositório (adaptador)
+        TarefaRepositoryEmMemoria repository = new TarefaRepositoryEmMemoria();
 
+        // Configuração do adaptador (CLI)
+        CLIAdapter cli = new CLIAdapter(repository);
+
+        // Iniciar sistema
         cli.iniciar();
     }
 }

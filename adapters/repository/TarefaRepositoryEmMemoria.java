@@ -1,11 +1,11 @@
 package adapters.repository;
 
 import core.Tarefa;
-import ports.TarefaRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import ports.TarefaRepository;
 
 public class TarefaRepositoryEmMemoria implements TarefaRepository {
     private final Map<String, Tarefa> tarefas = new HashMap<>();
