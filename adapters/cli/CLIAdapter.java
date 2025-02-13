@@ -1,7 +1,6 @@
 package adapters.cli;
 
 import adapters.repository.TarefaRepositoryEmMemoria;
-import core.GerenciadorTarefas;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,8 +9,9 @@ import ports.TarefaService;
 public class CLIAdapter {
     private final TarefaService tarefaService;
 
-    public CLIAdapter(TarefaRepositoryEmMemoria repository) {
-        this.tarefaService = new GerenciadorTarefas(repository);
+    public CLIAdapter() {
+        TarefaRepositoryEmMemoria repository = new TarefaRepositoryEmMemoria();
+        this.tarefaService = new TarefaService(repository);
     }
 
     public void iniciar() {

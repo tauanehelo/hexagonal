@@ -1,11 +1,9 @@
 package ports;
 
-import java.util.List;
-import java.util.Map;
+import core.GerenciadorTarefas;
+public class TarefaService extends GerenciadorTarefas{
+     public TarefaService(TarefaRepository repository){
+        super(repository);
+     }
 
-public interface TarefaService {
-    void criarTarefa(String id, String descricao);
-    List<Map<String, String>> listarTarefas();
-    List<Map<String, String>> listarTarefasPorStatus(boolean concluida);
-    void marcarTarefaComoConcluida(String id);
 }
